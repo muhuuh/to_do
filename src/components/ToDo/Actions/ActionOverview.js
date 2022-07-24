@@ -3,7 +3,7 @@ import ToDoContext from "../../store/todo-context";
 import ActionItem from "./ActionItem";
 import AddAction from "./AddAction";
 
-const ActionOverview = (props) => {
+const ActionOverview = (props) => { 
   const ctx = useContext(ToDoContext);
 
   const actionItems = ctx.toDos.map((todo) => (

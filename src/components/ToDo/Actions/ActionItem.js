@@ -18,7 +18,7 @@ const ActionItem = (props) => {
 
   const [isTooLow, setIsTooLow] = useState(false);
 
-  useEffect(() => {
+  useEffect(() => { 
     if (props.daysLeft <= 3) {
       setIsTooLow(true);
     } else if (props.daysLeft > 3) {

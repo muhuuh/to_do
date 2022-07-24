@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import ToDoContext from "../../store/todo-context";
 
 const AddAction = (props) => {
-  const ctx = useContext(ToDoContext);
+  const ctx = useContext(ToDoContext); 
 
   const [nameAction, setNameAction] = useState("");
   const [startAction, setStartAction] = useState("");

@@ -43,7 +43,7 @@ const toDoReducer = (state, action) => {
       indexItems: state.indexItems,
     };
   }
-
+ 
   if(action.type === "STARTED"){
     const startedIndex = state.toDoItems.findIndex(item => item.id === action.startedId);
     

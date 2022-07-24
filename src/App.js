@@ -3,7 +3,7 @@ import ToDoProvider from "./components/store/ToDoProvider";
 import ActionOverview from "./components/ToDo/Actions/ActionOverview";
 
 const App = () => {
-  return (
+  return ( 
     <ToDoProvider>
       <div className="container mx-auto bg-white">
         <NavBar />
