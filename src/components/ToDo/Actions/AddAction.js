@@ -43,7 +43,7 @@ const AddAction = (props) => {
   };
 
   return (
-    <form onSubmit={onSubmitHandler} className="w-2/3 mx-auto">
+    <form onSubmit={onSubmitHandler}>
       <div className="flex flex-row justify-between mt-16">
         <div className="flex flex-col gap-y-2">
           <label>Name</label>

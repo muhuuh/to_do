@@ -31,7 +31,7 @@ const ActionItem = (props) => {
       <div className="">{props.name}</div>
       <div>
         <div>{props.date}</div>
-        <div className={`italic ${props.daysLeft <= 3 ? "text-red-500" : "text-green-500"}`}>{props.daysLeft}</div>
+        <div className={`italic ${isTooLow ? "text-red-500" : "text-green-500"}`}>{props.daysLeft}</div>
       </div>
       <div className="flex flex-col ">
         <div>

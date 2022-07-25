@@ -7,6 +7,7 @@ const ToDoContext = React.createContext({
     archiveItem: () => {},
     addItem: (item) => {},
     removeItem: (item) => {},
+    filterItem: () => {},
 });
 
 export default ToDoContext;

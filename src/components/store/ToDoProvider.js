@@ -77,6 +77,33 @@ const toDoReducer = (state, action) => {
     };
   }
 
+  if(action.type === ""){
+    let filter_1;
+    let filter_2;
+
+    console.log(action.filter.priority)
+    if(action.filter.priority === ""){
+        filter_1= state.toDoItems
+    } else {
+        filter_1 = state.toDoItems.filter(todo => todo.priority === action.filter.priority);
+    }
+    
+    console.log(filter_1)
+
+    if(action.filter.daysLeft === ""){
+        filter_2 = filter_1
+    } else {
+        filter_2 = filter_1.filter(todo => todo.daysLeft < action.filter.daysLeft);
+    }
+    
+    return {
+        toDoItems: filter_2,
+        // toDoItems: state.toDoItems,
+        totalAmount: state.totalAmount,   
+        indexItems: state.indexItems,    
+    }
+  }
+
   return defaultToDoState;
 };
 
@@ -102,6 +129,10 @@ const ToDoProvider = (props) => {
     dispatchToDoAction({type: "ARCHIVE", achiveId: achiveId});
   };
 
+  const filterItemHandler = (filter) => {
+    dispatchToDoAction({type: "FILTER", filter: filter});
+  };
+
   const toDoContext = {
     //toDos: toDoActions,
     toDos: toDoState.toDoItems,
@@ -110,6 +141,7 @@ const ToDoProvider = (props) => {
     archiveItem: archiveItemHandler,
     addItem: addItemHandler,
     removeItem: removeItemHandler,
+    filterItem: filterItemHandler,
   };
 
   return (
