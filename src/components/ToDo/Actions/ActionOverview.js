@@ -56,11 +56,12 @@ const ActionOverview = (props) => {
   return (
     <div className="w-2/3 mx-auto">
       <Filter updateFilter={updateFilterHandler} />
-      <div className="border-2 round-lg shadow-lg o mt-8">
-        <div className="flex flex-col gap-y-8 m-12 overflow-y-scroll max-h-96">
+      <div className="border-2 round-lg shadow-lg o mt-16">
+        <div className="flex flex-col gap-y-8 m-12 overflow-y-scroll h-96">
           {actionItems}
         </div>
       </div>
+      <button className="flex mx-auto border-2 rounded-lg px-6 mt-16">Add item</button> 
       <AddAction />
     </div>
   );
