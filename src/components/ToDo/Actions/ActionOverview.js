@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import ToDoContext from "../../store/todo-context";
 import Filter from "../Filter/Filter";
 import ActionItem from "./ActionItem";
-import AddAction from "./AddAction";
+
 
 const ActionOverview = (props) => {
   const ctx = useContext(ToDoContext);
@@ -61,8 +61,8 @@ const ActionOverview = (props) => {
           {actionItems}
         </div>
       </div>
-      <button className="flex mx-auto border-2 rounded-lg px-6 mt-16">Add item</button> 
-      <AddAction />
+      <button onClick={props.onAddAction} type="button" className="flex mx-auto border-2 rounded-lg px-6 mt-16">Add item</button> 
+      
     </div>
   );
 };
