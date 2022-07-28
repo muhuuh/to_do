@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 const Filter = (props) => {
   const [priorityFilter, setPriorityFilter] = useState("");
   const [daysLeftFilter, setDaysLeftFilter] = useState("");
+  const [startedFilter, setStartedFilter] = useState("");
 
-  if (priorityFilter === "" && daysLeftFilter === "") {
+  if (priorityFilter === "" && daysLeftFilter === "" && startedFilter === "") {
     const currentFilter = {
       priority: priorityFilter,
       daysLeft: daysLeftFilter,
+      started: startedFilter,
     };
     props.updateFilter(currentFilter);
   }
@@ -16,9 +18,10 @@ const Filter = (props) => {
     const currentFilter = {
       priority: priorityFilter,
       daysLeft: daysLeftFilter,
+      started: startedFilter,
     };
     props.updateFilter(currentFilter);
-  }, [priorityFilter, daysLeftFilter]);
+  }, [priorityFilter, daysLeftFilter, startedFilter]);
 
   const onPriorityFilter = (event) => {
     setPriorityFilter(event.target.value);
@@ -26,6 +29,10 @@ const Filter = (props) => {
 
   const onDaysFilter = (event) => {
     setDaysLeftFilter(event.target.value);
+  };
+
+  const onStartedFilter = (event) => {
+    setStartedFilter(event.target.value);
   };
 
   return (
@@ -37,7 +44,7 @@ const Filter = (props) => {
           id="priority"
           name="priority"
           onChange={onPriorityFilter}
-          className="border-2 rounded-lg w-48 ml-4"
+          className="border-2 rounded-lg w-36 ml-4"
         >
           <option value=""></option>
           <option value="low">Low</option>
@@ -46,12 +53,25 @@ const Filter = (props) => {
         </select>
       </div>
       <div>
-        <label>Days left: </label>
+        <label>Days left</label>
         <input
           type="number"
           onChange={onDaysFilter}
-          className="border-2 rounded-lg w-48 ml-4"
+          className="border-2 rounded-lg w-36 ml-4"
         />
+      </div>
+      <div>
+        <label>Started</label>
+        <select
+          id="started"
+          name="started"
+          onChange={onStartedFilter}
+          className="border-2 rounded-lg w-36 ml-4"
+        >
+          <option value=""></option>
+          <option value="true">Started</option>
+          <option value="false">Not started</option>
+        </select>
       </div>
     </div>
   );

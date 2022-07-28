@@ -14,6 +14,7 @@ const ActionOverview = (props) => {
 
     let filter_1;
     let filter_2;
+    let filter_3;
 
     if (filter.priority === "") {
       filter_1 = filteredToDos;
@@ -26,10 +27,18 @@ const ActionOverview = (props) => {
     if (filter.daysLeft === "") {
       filter_2 = filter_1;
     } else {
-      filter_2 = filter_1.filter((todo) => Number(todo.daysLeft) <= Number(filter.daysLeft));
+      filter_2 = filter_1.filter(
+        (todo) => Number(todo.daysLeft) <= Number(filter.daysLeft)
+      );
     }
 
-    setFilteredToDos(filter_2);
+    if (filter.started === "") {
+      filter_3 = filter_2;
+    } else {
+      filter_3 = filter_2.filter((todo) => todo.done.toString() === filter.started);
+    }
+
+    setFilteredToDos(filter_3);
   };
 
   const actionItems = filteredToDos.map((todo) => (
