@@ -27,8 +27,8 @@ const ActionItem = (props) => {
   }, [props.daysLeft]);
 
   return (
-    <div className="grid grid-cols-4 items-center text-center shadow-md border-2 rounded-lg px-6 py-2 mr-6">
-      <div className="">{props.name}</div>
+    <div className="grid grid-cols-4 items-center text-center shadow-md border-2 rounded-lg hover:bg-veryPaleOrangeRed px-6 py-2 mr-6">
+      <div className="text-lg">{props.name}</div>
       <div>
         <div>{props.date}</div>
         <div className={`italic ${isTooLow ? "text-red-500" : "text-green-500"}`}>{props.daysLeft}</div>
@@ -42,7 +42,7 @@ const ActionItem = (props) => {
           />
           <label className="ml-2">Started</label>
         </div>
-        <button className={`${props.priority === "high" ? "text-red-500" : "italic"}`}>{props.priority}</button>
+        <button className={`${props.priority === "high" ? "text-red-500" : ""}`}>{props.priority}</button>
       </div>
       <div className="flex flex-col">
         <button onClick={archiveItemHandler}>Archive</button>

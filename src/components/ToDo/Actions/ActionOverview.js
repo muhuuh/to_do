@@ -65,7 +65,7 @@ const ActionOverview = (props) => {
       <button
         onClick={props.onAddAction}
         type="button"
-        className="flex mx-auto border-2 rounded-lg shadow-md bg-paleOrangeRed hover:bg-brownRed hover:text-white px-8 py-2 mt-16"
+        className="flex mx-auto hover:scale-110 border-2 rounded-lg shadow-md bg-paleOrangeRed hover:bg-brownRed hover:text-white px-8 py-2 mt-16"
       >
         Add item
       </button>

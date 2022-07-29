@@ -37,13 +37,13 @@ const Filter = (props) => {
 
   return (
     <div className="flex flex-row justify-around border-2 rounded-lg shadow-md p-8 mt-16">
-      <div>
+      <div className="">
         <label className=" text-lg">Priority</label>
         <select
           id="priority"
           name="priority"
           onChange={onPriorityFilter}
-          className="border-2 rounded-lg w-36 ml-4"
+          className="border-2 rounded-lg hover:border-darkGray w-36 ml-4"
         >
           <option value=""></option>
           <option value="low">Low</option>
@@ -56,7 +56,7 @@ const Filter = (props) => {
         <input
           type="number"
           onChange={onDaysFilter}
-          className="border-2 rounded-lg w-36 ml-4"
+          className="border-2 rounded-lg hover:border-darkGray w-36 ml-4"
         />
       </div>
       <div>
@@ -65,7 +65,7 @@ const Filter = (props) => {
           id="started"
           name="started"
           onChange={onStartedFilter}
-          className="border-2 rounded-lg w-36 ml-4"
+          className="border-2 rounded-lg hover:border-darkGray w-36 ml-4"
         >
           <option value=""></option>
           <option value="true">Started</option>

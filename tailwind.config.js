@@ -38,7 +38,7 @@ module.exports = {
           green: 'RGB(2, 190, 2)',		 
           orangeRed: 'RGB(245, 114, 53)',
           paleOrangeRed: 'RGB(248, 132, 79)',
-          veryPaleOrangeRed: 'RGB(254, 205, 182)',
+          veryPaleOrangeRed: 'RGB(254, 227, 214)',
         },
      },
   },
