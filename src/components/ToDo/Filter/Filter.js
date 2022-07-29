@@ -36,10 +36,9 @@ const Filter = (props) => {
   };
 
   return (
-    <div className="flex flex-row justify-around mt-16">
-      <div>Show</div>
+    <div className="flex flex-row justify-around border-2 rounded-lg shadow-md p-8 mt-16">
       <div>
-        <label>Priority</label>
+        <label className=" text-lg">Priority</label>
         <select
           id="priority"
           name="priority"
@@ -53,7 +52,7 @@ const Filter = (props) => {
         </select>
       </div>
       <div>
-        <label>Days left</label>
+        <label className="text-lg">Days left</label>
         <input
           type="number"
           onChange={onDaysFilter}
@@ -61,7 +60,7 @@ const Filter = (props) => {
         />
       </div>
       <div>
-        <label>Started</label>
+        <label className="text-lg">Started</label>
         <select
           id="started"
           name="started"

@@ -8,8 +8,8 @@ const AddAction = (props) => {
   const [nameAction, setNameAction] = useState("");
   const [startAction, setStartAction] = useState("");
   const [dateAction, setDateAction] = useState("");
-  const [priorityAction, setPriorityAction] = useState("");
-  // const [isTooLow, setIsTooLow] = useState(false);
+  const [priorityAction, setPriorityAction] = useState("Low");
+  const [showError, setShowError] = useState(false);
 
   const onNameHandler = (event) => {
     setNameAction(event.target.value);
@@ -24,6 +24,8 @@ const AddAction = (props) => {
     setPriorityAction(event.target.value);
   };
 
+  const errorMessage = "Please fill in all fields.";
+
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
@@ -33,6 +35,19 @@ const AddAction = (props) => {
       (endDate.getTime() - startDate.getTime()) /
       (1000 * 3600 * 24)
     ).toFixed(1);
+
+    if(nameAction === ""){
+      setShowError(true);
+      return
+    }
+    if(startAction === ""){
+      setShowError(true);
+      return
+    }
+    if(dateAction === ""){
+      setShowError(true);
+      return
+    }
 
     const newItem = {
       id: Date.now(),
@@ -44,18 +59,21 @@ const AddAction = (props) => {
     };
 
     ctx.addItem(newItem);
+    setNameAction("");
+    setShowError(false);
   };
 
   return (
     <Modal onCloseModalToDo={props.onCloseAction}>
       <form onSubmit={onSubmitHandler}>
-        <div className="flex flex-row justify-between mt-16">
+        <div className="flex flex-row justify-around mt-6">
           <div className="flex flex-col gap-y-2">
             <label>Name</label>
             <input
               type="text"
               onChange={onNameHandler}
               className="border-2 rounded-lg w-48"
+              value={nameAction}
             />
           </div>
           <div className="flex flex-col gap-y-2">
@@ -67,6 +85,8 @@ const AddAction = (props) => {
               className="border-2 rounded-lg w-48"
             />
           </div>
+        </div>
+        <div className="flex flex-row justify-around mt-6">
           <div className="flex flex-col gap-y-2">
             <label>ETA</label>
             <input
@@ -90,11 +110,18 @@ const AddAction = (props) => {
             </select>
           </div>
         </div>
-        <div className="flex flex-row justify-around mt-8">
-          <button type="submit" className="border-2 rounded-lg shadow-lg px-6">
+        <div className="flex justify-center text-red-500 italic text-sm mt-6">
+          {showError && errorMessage}
+        </div>
+        <div className="flex flex-row justify-center mt-16">
+          <button type="submit" className="border-2 rounded-lg shadow-lg px-6 mr-8">
             Submit
           </button>
-          <button type="button" onClick={props.onCloseAction} className="border-2 rounded-lg shadow-lg px-6">
+          <button
+            type="button"
+            onClick={props.onCloseAction}
+            className="border-2 rounded-lg shadow-lg px-6"
+          >
             Close
           </button>
         </div>

@@ -3,7 +3,6 @@ import ToDoContext from "../../store/todo-context";
 import Filter from "../Filter/Filter";
 import ActionItem from "./ActionItem";
 
-
 const ActionOverview = (props) => {
   const ctx = useContext(ToDoContext);
   const [filteredToDos, setFilteredToDos] = useState(ctx.toDos);
@@ -35,7 +34,9 @@ const ActionOverview = (props) => {
     if (filter.started === "") {
       filter_3 = filter_2;
     } else {
-      filter_3 = filter_2.filter((todo) => todo.done.toString() === filter.started);
+      filter_3 = filter_2.filter(
+        (todo) => todo.done.toString() === filter.started
+      );
     }
 
     setFilteredToDos(filter_3);
@@ -56,13 +57,18 @@ const ActionOverview = (props) => {
   return (
     <div className="w-2/3 mx-auto">
       <Filter updateFilter={updateFilterHandler} />
-      <div className="border-2 round-lg shadow-lg o mt-16">
-        <div className="flex flex-col gap-y-8 m-12 overflow-y-scroll h-96">
+      <div className="border-2 rounded-lg shadow-md mt-16">
+        <div className="flex flex-col gap-y-8 m-12 overflow-y-scroll h-max-96">
           {actionItems}
         </div>
       </div>
-      <button onClick={props.onAddAction} type="button" className="flex mx-auto border-2 rounded-lg px-6 mt-16">Add item</button> 
-      
+      <button
+        onClick={props.onAddAction}
+        type="button"
+        className="flex mx-auto border-2 rounded-lg shadow-md bg-paleOrangeRed hover:bg-brownRed hover:text-white px-8 py-2 mt-16"
+      >
+        Add item
+      </button>
     </div>
   );
 };
