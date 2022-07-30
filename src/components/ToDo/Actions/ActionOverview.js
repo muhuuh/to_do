@@ -58,14 +58,22 @@ const ActionOverview = (props) => {
     <div className="w-2/3 mx-auto">
       <Filter updateFilter={updateFilterHandler} />
       <div className="border-2 rounded-lg shadow-md mt-16">
-        <div className="flex flex-col gap-y-8 m-12 overflow-y-scroll h-max-96">
+        <div className="grid grid-cols-6 items-center text-center border-b-4 border-orange-700  pb-2 m-12">
+          <span className="">Title</span>
+          <span>Days until ETA</span>
+          <span>Started</span>
+          <span>Priority</span>
+          <span className="">Action</span>
+          <span>ETA</span>
+        </div>
+        <div className="flex flex-col gap-y-8 m-12 overflow-y-scroll h-96">
           {actionItems}
         </div>
       </div>
       <button
         onClick={props.onAddAction}
         type="button"
-        className="flex mx-auto hover:scale-110 border-2 rounded-lg shadow-md bg-paleOrangeRed hover:bg-brownRed hover:text-white px-8 py-2 mt-16"
+        className="flex mx-auto hover:scale-110 border-2 rounded-lg shadow-md bg-paleOrangeRed hover:bg-brownRed hover:text-white px-8 py-2 my-16"
       >
         Add item
       </button>

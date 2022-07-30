@@ -8,7 +8,7 @@ const AddAction = (props) => {
   const [nameAction, setNameAction] = useState("");
   const [startAction, setStartAction] = useState("");
   const [dateAction, setDateAction] = useState("");
-  const [priorityAction, setPriorityAction] = useState("Low");
+  const [priorityAction, setPriorityAction] = useState("low");
   const [showError, setShowError] = useState(false);
 
   const onNameHandler = (event) => {

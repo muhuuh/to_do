@@ -43,7 +43,7 @@ const Filter = (props) => {
           id="priority"
           name="priority"
           onChange={onPriorityFilter}
-          className="border-2 rounded-lg hover:border-darkGray w-36 ml-4"
+          className="border-2 rounded-lg hover:border-orange-700 focus:border-orange-700 w-36 ml-4"
         >
           <option value=""></option>
           <option value="low">Low</option>
@@ -56,7 +56,7 @@ const Filter = (props) => {
         <input
           type="number"
           onChange={onDaysFilter}
-          className="border-2 rounded-lg hover:border-darkGray w-36 ml-4"
+          className="border-2 rounded-lg hover:border-orange-700 focus:border-orange-700 w-36 ml-4"
         />
       </div>
       <div>
@@ -65,7 +65,7 @@ const Filter = (props) => {
           id="started"
           name="started"
           onChange={onStartedFilter}
-          className="border-2 rounded-lg hover:border-darkGray w-36 ml-4"
+          className="border-2 rounded-lg hover:border-orange-700 focus:border-orange-700 w-36 ml-4"
         >
           <option value=""></option>
           <option value="true">Started</option>

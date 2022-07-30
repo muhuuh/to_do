@@ -41,7 +41,7 @@ const App = () => {
 
   return (
     <ToDoProvider>
-      <div className="container mx-auto bg-white h-screen">
+      <div className="container mx-auto bg-white pb-12">
         <NavBar
           onToDo={onToDoHandler}
           onExpense={onExpenseHandler}
