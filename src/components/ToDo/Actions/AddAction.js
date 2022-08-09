@@ -72,7 +72,7 @@ const AddAction = (props) => {
             <input
               type="text"
               onChange={onNameHandler}
-              className="border-2 rounded-lg  w-48"
+              className="border-2 rounded-lg hover:border-orange-700 w-48"
               value={nameAction}
             />
           </div>
@@ -82,7 +82,7 @@ const AddAction = (props) => {
               type="date"
               onChange={onStartHandler}
               placeholder="dd/mm/yyyy"
-              className="border-2 rounded-lg w-48"
+              className="border-2 rounded-lg hover:border-orange-700 w-48"
             />
           </div>
         </div>
@@ -93,7 +93,7 @@ const AddAction = (props) => {
               type="date"
               onChange={onDateHandler}
               placeholder="dd-mm-yyyy"
-              className="border-2 rounded-lg w-48"
+              className="border-2 rounded-lg hover:border-orange-700 w-48"
             />
           </div>
           <div className="flex flex-col gap-y-4">
@@ -102,7 +102,7 @@ const AddAction = (props) => {
               id="priority"
               name="priority"
               onChange={onPriorityHandler}
-              className="border-2 rounded-lg w-48"
+              className="border-2 rounded-lg hover:border-orange-700 w-48"
             >
               <option value="low">Low</option>
               <option value="medium">Medium</option>
